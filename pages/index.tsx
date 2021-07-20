@@ -2,16 +2,23 @@ import { useState } from "react";
 import ShipList from "../components/ShipList";
 import Comparision from "../components/Comparison";
 import ships from "../dummyData/ships";
+import Ship from "../types/ship";
 
 const App: React.FC = () => {
   const [state, setState] = useState<"selection" | "comparision">("selection");
+  const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
     <>
       <h1>Star wars ship comparison</h1>
       {state === "selection" ? (
-        <ShipList ships={ships} setState={setState} />
+        <ShipList
+          ships={ships}
+          setState={setState}
+          setShipToCompare={setShipsToCompare}
+          shipsToCompare={shipsToCompare}
+        />
       ) : (
-        <Comparision setState={setState} />
+        <Comparision setState={setState} ships={shipsToCompare} />
       )}
     </>
   );
