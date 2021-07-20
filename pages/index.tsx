@@ -1,11 +1,18 @@
+import { useState } from "react";
 import ShipList from "../components/ShipList";
+import Comparision from "../components/Comparison";
 import ships from "../dummyData/ships";
 
 const App: React.FC = () => {
+  const [state, setState] = useState<"selection" | "comparision">("selection");
   return (
     <>
       <h1>Star wars ship comparison</h1>
-      <ShipList ships={ships} />
+      {state === "selection" ? (
+        <ShipList ships={ships} setState={setState} />
+      ) : (
+        <Comparision setState={setState} />
+      )}
     </>
   );
 };
