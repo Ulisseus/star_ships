@@ -1,6 +1,8 @@
 .ship {
+  text-align: center;
 }
 
 .list {
-  max-height: 100%;
+  max-height: 500px;
+  padding: 0;
 }

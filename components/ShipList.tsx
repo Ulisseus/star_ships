@@ -18,7 +18,7 @@ const ShipList: React.FC<{
       }}
       className={
         shipsToCompare.includes(ship)
-          ? `card bg-secondary ${styles.ship}`
+          ? `card bg-secondary text-white ${styles.ship}`
           : `card ${styles.ship}`
       }
     >
@@ -27,16 +27,18 @@ const ShipList: React.FC<{
   ));
   return (
     <>
-      <button
-        type="button"
-        className="btn btn-secondary mx-3 my-2"
-        onClick={() => {
-          setState("comparision");
-        }}
-      >
-        Compare selected
-      </button>
-      <ul className={`d-flex flex-column flex-wrap ${styles.list}`}>{names}</ul>
+      <div className="d-flex justify-content-center">
+        <button
+          type="button"
+          className="btn btn-secondary mx-3 my-2"
+          onClick={() => {
+            setState("comparision");
+          }}
+        >
+          Compare selected
+        </button>
+      </div>
+      <ul className={`d-flex flex-column flex-wrap ${styles.list} mx-2`}>{names}</ul>
     </>
   );
 };
