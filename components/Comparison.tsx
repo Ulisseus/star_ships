@@ -27,7 +27,7 @@ const Comparision: React.FC<{
   return (
     <>
       {ships.map((ship) => (
-        <ShipProfile ship={ship} value={compareBy} />
+        <ShipProfile ship={ship} value={compareBy} key={ship.name} />
       ))}
       <button
         type="button"
