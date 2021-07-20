@@ -1,6 +1,7 @@
 import React from "react";
 import Ship from "../types/ship";
 import { compareBy } from "./Comparison";
+
 const fieldsToFilter = ["pilots", "films", "created", "edited", "url"];
 const ShipProfile: React.FC<{ ship: Ship; value: compareBy }> = ({
   ship,
@@ -13,7 +14,7 @@ const ShipProfile: React.FC<{ ship: Ship; value: compareBy }> = ({
           return key === value ? (
             <h1>{`${key}: ${ship[key as keyof Ship]}`}</h1>
           ) : (
-            <p>{`${key}: ${ship[key as keyof Ship]}`}</p>
+            <p className="">{`${key}: ${ship[key as keyof Ship]}`}</p>
           );
       })}
     </div>
