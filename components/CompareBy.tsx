@@ -13,7 +13,8 @@ export const compareByArr = [
 
 const CompareBy: React.FC<{
   setCompareBy: React.Dispatch<React.SetStateAction<compareBy>>;
-}> = ({ setCompareBy }) => {
+  compareBy: compareBy;
+}> = ({ setCompareBy, compareBy }) => {
   return (
     <div>
       <h2>Compare by:</h2>
@@ -24,7 +25,9 @@ const CompareBy: React.FC<{
               onClick={() => setCompareBy(value as compareBy)}
               key={value}
               type="button"
-              className="btn btn-secondary mx-3 my-2"
+              className={`btn mx-3 my-2 ${
+                value === compareBy ? "btn-info" : "btn-secondary"
+              }`}
             >
               {value}
             </button>

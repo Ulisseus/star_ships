@@ -28,7 +28,7 @@ const App: React.FC = () => {
         )}
       </main>
       <footer className="bg-secondary text-white text-center">
-        <p className="my-1">@2021</p>
+        <p className="my-1 font-weight-bold">2021</p>
       </footer>
     </div>
   );
