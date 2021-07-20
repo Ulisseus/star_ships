@@ -10,10 +10,12 @@ const App: React.FC = () => {
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
     <div className="d-flex flex-column min-vh-100">
-      <nav className="text-center bg-secondary text-white px-4 py-3">
+      <nav className="bg-secondary text-white px-4 py-3 d-flex align-items-center justify-content-center">
         <h1 className={styles.title}>Star wars ships</h1>
       </nav>
-      <main className={`${styles.main} d-flex flex-column justify-content-center`}>
+      <main
+        className={`${styles.main} d-flex flex-column justify-content-center bg-light`}
+      >
         {state === "selection" ? (
           <ShipList
             ships={ships}
@@ -25,7 +27,9 @@ const App: React.FC = () => {
           <Comparision setState={setState} ships={shipsToCompare} />
         )}
       </main>
-      <footer className="bg-secondary text-white">test footer 2021</footer>
+      <footer className="bg-secondary text-white text-center">
+        <p className="my-1">@2021</p>
+      </footer>
     </div>
   );
 };
