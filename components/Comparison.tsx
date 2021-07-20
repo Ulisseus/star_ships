@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import Ship from "../types/ship";
+import CompareBy from "./CompareBy";
 import ShipProfile from "./ShipProfile";
 
-type compareBy = "name" | "length" | "max_atmosphering_speed";
-const compareByArr = ["length", "max_atmosphering_speed"];
+export type compareBy =
+  | "cost_in_credits"
+  | "max_atmosphering_speed"
+  | "crew"
+  | "passengers"
+  | "length"
+  | "cargo_capacity"
+  | "hyperdrive_rating"
+  | "MGLT";
 
 const validate = (value: any) => {
-  if (value === "unknown") return Number.NEGATIVE_INFINITY;
+  if (value === "unknown" || value === "n/a") return Number.NEGATIVE_INFINITY;
   return Number.parseFloat(value);
 };
 
@@ -14,13 +22,12 @@ const Comparision: React.FC<{
   setState: React.Dispatch<React.SetStateAction<"selection" | "comparision">>;
   ships: Ship[];
 }> = ({ setState, ships }) => {
-  const [compareBy, setCompareBy] = useState<compareBy>("name");
-  ships.sort((a, b) => validate(a[compareBy]) - validate(b[compareBy]));
-  console.log(ships,'ships')
+  const [compareBy, setCompareBy] = useState<compareBy>("cost_in_credits");
+  ships.sort((a, b) => validate(b[compareBy]) - validate(a[compareBy]));
   return (
     <>
       {ships.map((ship) => (
-        <ShipProfile ship={ship} />
+        <ShipProfile ship={ship} value={compareBy} />
       ))}
       <button
         type="button"
@@ -31,13 +38,7 @@ const Comparision: React.FC<{
       >
         Back to selection
       </button>
-      {compareByArr.map((value) => {
-        return (
-          <button
-            onClick={() => setCompareBy(value as compareBy)}
-          >{`Compare by ${value}`}</button>
-        );
-      })}
+      <CompareBy setCompareBy={setCompareBy} />
     </>
   );
 };
