@@ -1,5 +1,6 @@
 import React from "react";
 import Ship from "../types/ship";
+import styles from "../styles/shipList.module.css";
 
 const ShipList: React.FC<{
   ships: Ship[];
@@ -15,14 +16,14 @@ const ShipList: React.FC<{
           setShipToCompare(shipsToCompare.filter((s) => s.name !== ship.name));
         } else setShipToCompare([...shipsToCompare, ship]);
       }}
-      className={shipsToCompare.includes(ship) ? "bg-secondary" : ""}
+      className={shipsToCompare.includes(ship) ? "card bg-secondary " : "card "}
     >
       {ship.name}
     </li>
   ));
   return (
     <>
-      <ul>{names}</ul>
+      <ul className="m-auto text-center px-3">{names}</ul>
 
       <button
         onClick={() => {

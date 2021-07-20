@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Ship from "../types/ship";
 import CompareBy from "./CompareBy";
 import ShipProfile from "./ShipProfile";
+import styles from "../styles/comparison.module.css";
 
 export type compareBy =
   | "cost_in_credits"
@@ -27,7 +28,7 @@ const Comparision: React.FC<{
   return (
     <>
       <CompareBy setCompareBy={setCompareBy} />
-      <div className="d-flex flex-nowrap">
+      <div className={`d-flex flex-nowrap ${styles.comparison}`}>
         {ships.map((ship) => (
           <ShipProfile ship={ship} value={compareBy} key={ship.name} />
         ))}
