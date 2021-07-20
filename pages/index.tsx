@@ -9,11 +9,11 @@ const App: React.FC = () => {
   const [state, setState] = useState<"selection" | "comparision">("selection");
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
-    <div>
+    <div className="d-flex flex-column min-vh-100">
       <nav className="text-center bg-secondary text-white px-4 py-3">
         <h1 className={styles.title}>Star wars ships</h1>
       </nav>
-      <main>
+      <main className={`${styles.main} d-flex flex-column justify-content-center`}>
         {state === "selection" ? (
           <ShipList
             ships={ships}
@@ -25,6 +25,7 @@ const App: React.FC = () => {
           <Comparision setState={setState} ships={shipsToCompare} />
         )}
       </main>
+      <footer className="bg-secondary text-white">test footer 2021</footer>
     </div>
   );
 };
