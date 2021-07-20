@@ -26,6 +26,7 @@ const Comparision: React.FC<{
   ships.sort((a, b) => validate(b[compareBy]) - validate(a[compareBy]));
   return (
     <>
+      <CompareBy setCompareBy={setCompareBy} />
       <div className="d-flex flex-nowrap">
         {ships.map((ship) => (
           <ShipProfile ship={ship} value={compareBy} key={ship.name} />
@@ -40,7 +41,6 @@ const Comparision: React.FC<{
       >
         Back to selection
       </button>
-      <CompareBy setCompareBy={setCompareBy} />
     </>
   );
 };
