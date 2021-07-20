@@ -11,9 +11,11 @@ const ShipList: React.FC<{
     <li
       key={ship.name}
       onClick={() => {
-        if (shipsToCompare.map((s) => s.name).includes(ship.name)) return;
-        setShipToCompare([...shipsToCompare, ship]);
+        if (shipsToCompare.map((s) => s.name).includes(ship.name)) {
+          setShipToCompare(shipsToCompare.filter((s) => s.name !== ship.name));
+        } else setShipToCompare([...shipsToCompare, ship]);
       }}
+      className={shipsToCompare.includes(ship) ? "bg-secondary" : ""}
     >
       {ship.name}
     </li>
