@@ -10,7 +10,9 @@ const App: React.FC = () => {
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
     <div>
-      <h1>Star wars ship comparison</h1>
+      <nav className='text-center bg-secondary text-white px-4 py-3'>
+        <h1 className={styles.title}>Star wars ship comparison</h1>
+      </nav>
       <main>
         {state === "selection" ? (
           <ShipList
