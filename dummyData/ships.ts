@@ -1,4 +1,6 @@
-const ships = [
+import Ship from "../types/ship";
+
+const ships: Ship[] = [
   {
     name: "Slave 1",
     model: "Firespray-31-class patrol and attack",

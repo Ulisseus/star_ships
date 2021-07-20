@@ -2,11 +2,10 @@ import ShipList from "../components/ShipList";
 import ships from "../dummyData/ships";
 
 const App: React.FC = () => {
-  console.log(ships, "ships");
   return (
     <>
       <h1>Star wars ship comparison</h1>
-      <ShipList />
+      <ShipList ships={ships} />
     </>
   );
 };
