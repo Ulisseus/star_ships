@@ -1,7 +1,34 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import ShipList from "../components/ShipList";
+import ships from "../dummyData/ships";
 
-export default function Home() {
-  return <h1>Star wars ship comparison</h1>;
-}
+const App: React.FC = () => {
+  console.log(ships, "ships");
+  return (
+    <>
+      <h1>Star wars ship comparison</h1>
+      <ShipList />
+    </>
+  );
+};
+
+export default App;
+
+//export const getStaticProps = async () => {
+//const ships: any = [];
+//let current = await fetch("https://swapi.dev/api/starships/?page=1");
+//const parsed = await current.json();
+//let url = parsed.next;
+//ships.push(parsed.results);
+//while (url !== null) {
+//let current = await fetch(url);
+//const parsed = await current.json();
+//url = parsed.next;
+//ships.push(parsed.results);
+//}
+
+//return {
+//props: {
+//ships,
+//},
+//};
+//};
