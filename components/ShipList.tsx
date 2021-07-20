@@ -16,22 +16,27 @@ const ShipList: React.FC<{
           setShipToCompare(shipsToCompare.filter((s) => s.name !== ship.name));
         } else setShipToCompare([...shipsToCompare, ship]);
       }}
-      className={shipsToCompare.includes(ship) ? "card bg-secondary " : "card "}
+      className={
+        shipsToCompare.includes(ship)
+          ? `card bg-secondary ${styles.ship}`
+          : `card ${styles.ship}`
+      }
     >
       {ship.name}
     </li>
   ));
   return (
     <>
-      <ul className="m-auto text-center px-3">{names}</ul>
-
       <button
+        type="button"
+        className="btn btn-secondary mx-3 my-2"
         onClick={() => {
           setState("comparision");
         }}
       >
-        Change State
+        Compare selected
       </button>
+      <ul className={`d-flex flex-column flex-wrap ${styles.list}`}>{names}</ul>
     </>
   );
 };

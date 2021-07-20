@@ -35,7 +35,7 @@ const Comparision: React.FC<{
       </div>
       <button
         type="button"
-        className="d-block"
+        className="btn btn-secondary mx-3 my-2"
         onClick={() => {
           setState("selection");
         }}
