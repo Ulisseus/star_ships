@@ -17,14 +17,14 @@ export default App;
 //let current = await fetch("https://swapi.dev/api/starships/?page=1");
 //const parsed = await current.json();
 //let url = parsed.next;
-//ships.push(parsed.results);
+//ships.push(...parsed.results);
 //while (url !== null) {
 //let current = await fetch(url);
 //const parsed = await current.json();
+//console.log(parsed);
 //url = parsed.next;
-//ships.push(parsed.results);
+//ships.push(...parsed.results);
 //}
-
 //return {
 //props: {
 //ships,
