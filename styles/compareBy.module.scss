@@ -1,7 +1,12 @@
 .increasing::after {
-  content: "\25B2";
+  content: "\25BC";
 }
 
 .decreasing::after {
-  content: "\25BC";
+  content: "\25B2";
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
 }
