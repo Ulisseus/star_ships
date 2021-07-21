@@ -11,10 +11,12 @@ const App: React.FC = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <nav className="bg-secondary text-white px-4 py-3 d-flex align-items-center justify-content-center">
-        <h1 className={`${styles.title} text-primary`}>Star wars ships</h1>
+        <h1 className={`${styles.title} text-primary bg-secondary`}>
+          Star wars ships
+        </h1>
       </nav>
       <main
-        className={`${styles.main} d-flex flex-column justify-content-center bg-light`}
+        className={`${styles.main} d-flex flex-column justify-content-center bg-gray`}
       >
         {state === "selection" ? (
           <ShipList

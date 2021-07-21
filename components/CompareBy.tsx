@@ -21,7 +21,7 @@ const CompareBy: React.FC<{
 }> = ({ setCompareBy, compareBy, byIncreasing, setByIncreasing }) => {
   return (
     <div>
-      <h2 className="mx-3 ">Compare by:</h2>
+      <h2 className="text-primary">Compare by:</h2>
       <div className="d-flex flex-wrap">
         {compareByArr.map((value) => {
           return (
@@ -34,7 +34,7 @@ const CompareBy: React.FC<{
               type="button"
               className={`btn mx-3 my-2  ${
                 value === compareBy
-                  ? `btn-info ${
+                  ? `btn-primary ${
                       byIncreasing ? styles.increasing : styles.decreasing
                     }`
                   : "btn-secondary"
