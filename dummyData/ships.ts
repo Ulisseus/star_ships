@@ -1,3 +1,4 @@
+//used for testing
 import Ship from "../types/ship";
 
 const ships: Ship[] = [
