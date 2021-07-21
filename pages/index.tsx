@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
 };
 
 const App: React.FC<{ ships: any[] }> = ({ ships }) => {
-  //should be a proper type guard for every field
+  //TO-DO add proper type check for every field
   if (ships[0]["name"]) ships as Ship[];
   const [state, setState] = useState<"selection" | "comparision">("selection");
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
@@ -54,8 +54,10 @@ const App: React.FC<{ ships: any[] }> = ({ ships }) => {
 
 export default App;
 
+const TWENTY_FOUR_HOURS = 60 * 60 * 24;
+
 export const getStaticProps = async () => {
-  //do no trust the API
+  //do no trust API
   const ships: any = [];
   let initialLink = await fetch("https://swapi.dev/api/starships/?page=1");
   const parsedData = await initialLink.json();
@@ -71,5 +73,8 @@ export const getStaticProps = async () => {
     props: {
       ships,
     },
+    //next.js incremental static regeneration
+    //https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration
+    revalidate: TWENTY_FOUR_HOURS,
   };
 };
