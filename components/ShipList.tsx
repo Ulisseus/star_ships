@@ -38,7 +38,9 @@ const ShipList: React.FC<{
           Compare selected
         </button>
       </div>
-      <ul className={`d-flex flex-column flex-wrap ${styles.list} mx-2`}>{names}</ul>
+      <ul className={`d-flex flex-column flex-md-wrap ${styles.list} mx-2`}>
+        {names}
+      </ul>
     </>
   );
 };
