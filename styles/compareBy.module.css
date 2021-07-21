@@ -1,0 +1,7 @@
+.increasing::after {
+  content: "\25B2";
+}
+
+.decreasing::after {
+  content: "\25BC";
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import { compareBy } from "./Comparison";
+import styles from "../styles/compareBy.module.css";
+
 export const compareByArr = [
   "cost_in_credits",
   "max_atmosphering_speed",
@@ -30,8 +32,12 @@ const CompareBy: React.FC<{
               }}
               key={value}
               type="button"
-              className={`btn mx-3 my-2 ${
-                value === compareBy ? "btn-info" : "btn-secondary"
+              className={`btn mx-3 my-2  ${
+                value === compareBy
+                  ? `btn-info ${
+                      byIncreasing ? styles.increasing : styles.decreasing
+                    }`
+                  : "btn-secondary"
               }`}
             >
               {value}
