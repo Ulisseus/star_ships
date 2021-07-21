@@ -10,10 +10,14 @@ const App: React.FC = () => {
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
     <div className="d-flex flex-column min-vh-100">
-      <nav className="bg-secondary text-white px-4 py-3 d-flex align-items-center justify-content-center">
-        <h1 className={`${styles.title} text-primary bg-secondary`}>
+      <nav className="bg-secondary text-white px-4 py-3 text-center border-bottom border-primary">
+        <h1 className={`${styles.title} text-primary bg-secondary m-auto`}>
           Star wars ships
         </h1>
+        <div className="text-primary">
+          In some far-far away galaxy someone decided to compare all
+          starships...
+        </div>
       </nav>
       <main
         className={`${styles.main} d-flex flex-column justify-content-center bg-gray`}
@@ -29,8 +33,8 @@ const App: React.FC = () => {
           <Comparision setState={setState} ships={shipsToCompare} />
         )}
       </main>
-      <footer className="bg-secondary text-primary text-center">
-        <p className="my-1 font-weight-bold">2021</p>
+      <footer className="bg-secondary text-primary text-center border-top border-primary">
+        <b className="py-1 d-inline-block">2021</b>
       </footer>
     </div>
   );

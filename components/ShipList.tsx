@@ -19,7 +19,7 @@ const ShipList: React.FC<{
       className={
         shipsToCompare.includes(ship)
           ? `card bg-secondary text-primary ${styles.ship} my-1  px-2 py-1`
-          : `card ${styles.ship} my-1 px-2 py-1`
+          : `card ${styles.ship} bg-primary my-1 px-2 py-1`
       }
     >
       {ship.name}
