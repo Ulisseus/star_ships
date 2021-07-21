@@ -43,7 +43,7 @@ const CompareBy: React.FC<{
 }> = ({ setCompareBy, compareBy, byIncreasing, setByIncreasing }) => {
   return (
     <div>
-      <h2 className={`text-primary mx-3 ${styles.title}`}>Compare by:</h2>
+      <h2 className={`text-primary m-3 ${styles.title}`}>Compare by:</h2>
       <div className="d-flex flex-wrap">
         {compareByArr.map((value) => {
           return (
