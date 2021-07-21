@@ -46,7 +46,13 @@ const ShipList: React.FC<{
   );
   return (
     <>
-      {message && <h2 className="text-primary text-center my-4">{message}</h2>}
+      <h2
+        className={`text-primary text-center my-4 ${
+          message ? "visible" : "invisible"
+        } ${styles.message}`}
+      >
+        {message}
+      </h2>
       <ul className={`${styles.list} mx-2`}>{names}</ul>
       <div className="d-flex justify-content-center">{button}</div>
     </>
