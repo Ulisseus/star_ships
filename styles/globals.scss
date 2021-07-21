@@ -15,6 +15,16 @@ a {
   box-sizing: border-box;
 }
 
+$theme-colors: (
+  "primary": rgb(216, 213, 64),
+  "secondary": rgb(102, 102, 102),
+  "warning": #ffae28,
+  "gray": #6c757d,
+  "info": #28ff69,
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
 @font-face {
   font-family: "Jedi";
   src: url("/jedi.ttf");

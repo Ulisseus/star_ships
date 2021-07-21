@@ -1,6 +1,6 @@
 import React from "react";
 import { compareBy } from "./Comparison";
-import styles from "../styles/compareBy.module.css";
+import styles from "../styles/compareBy.module.scss";
 
 export const compareByArr = [
   "cost_in_credits",

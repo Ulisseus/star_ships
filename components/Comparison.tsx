@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Ship from "../types/ship";
 import CompareBy from "./CompareBy";
 import ShipProfile from "./ShipProfile";
-import styles from "../styles/comparison.module.css";
+import styles from "../styles/comparison.module.scss";
 
 export type compareBy =
   | "cost_in_credits"

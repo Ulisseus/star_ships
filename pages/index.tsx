@@ -3,7 +3,7 @@ import ShipList from "../components/ShipList";
 import Comparision from "../components/Comparison";
 import ships from "../dummyData/ships";
 import Ship from "../types/ship";
-import styles from "../styles/index.module.css";
+import styles from "../styles/index.module.scss";
 
 const App: React.FC = () => {
   const [state, setState] = useState<"selection" | "comparision">("selection");
@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       <nav className="bg-secondary text-white px-4 py-3 d-flex align-items-center justify-content-center">
-        <h1 className={styles.title}>Star wars ships</h1>
+        <h1 className={`${styles.title} text-primary`}>Star wars ships</h1>
       </nav>
       <main
         className={`${styles.main} d-flex flex-column justify-content-center bg-light`}

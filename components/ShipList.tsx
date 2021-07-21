@@ -1,6 +1,6 @@
 import React from "react";
 import Ship from "../types/ship";
-import styles from "../styles/shipList.module.css";
+import styles from "../styles/shipList.module.scss";
 
 const ShipList: React.FC<{
   ships: Ship[];

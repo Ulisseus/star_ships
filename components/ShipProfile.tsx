@@ -1,7 +1,7 @@
 import React from "react";
 import Ship from "../types/ship";
 import { compareBy } from "./Comparison";
-import styles from "../styles/shipProfile.module.css";
+import styles from "../styles/shipProfile.module.scss";
 
 const fieldsToFilter = ["pilots", "films", "created", "edited", "url"];
 const ShipProfile: React.FC<{ ship: Ship; value: compareBy }> = ({
