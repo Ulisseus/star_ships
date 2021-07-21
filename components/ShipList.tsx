@@ -31,7 +31,7 @@ const ShipList: React.FC<{
       <div className="d-flex justify-content-center">
         <button
           type="button"
-          className="btn btn-secondary mx-3 my-2 text-primary"
+          className="btn btn-secondary mx-3 my-2 text-primary border border-primary"
           onClick={() => {
             setState("comparision");
           }}

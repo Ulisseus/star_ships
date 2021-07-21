@@ -29,7 +29,7 @@ const App: React.FC = () => {
           <Comparision setState={setState} ships={shipsToCompare} />
         )}
       </main>
-      <footer className="bg-secondary text-white text-center">
+      <footer className="bg-secondary text-primary text-center">
         <p className="my-1 font-weight-bold">2021</p>
       </footer>
     </div>
