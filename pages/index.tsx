@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ShipList from "../components/ShipList";
 import Comparision from "../components/Comparison";
-import ships from "../dummyData/ships";
 import Ship from "../types/ship";
 import styles from "../styles/index.module.scss";
 
@@ -26,7 +25,9 @@ const Footer: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
+const App: React.FC<{ ships: any[] }> = ({ ships }) => {
+  //should be a proper type guard for every field
+  if (ships[0]["name"]) ships as Ship[];
   const [state, setState] = useState<"selection" | "comparision">("selection");
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
@@ -53,22 +54,22 @@ const App: React.FC = () => {
 
 export default App;
 
-//export const getStaticProps = async () => {
-//const ships: any = [];
-//let current = await fetch("https://swapi.dev/api/starships/?page=1");
-//const parsed = await current.json();
-//let url = parsed.next;
-//ships.push(...parsed.results);
-//while (url !== null) {
-//let current = await fetch(url);
-//const parsed = await current.json();
-//console.log(parsed);
-//url = parsed.next;
-//ships.push(...parsed.results);
-//}
-//return {
-//props: {
-//ships,
-//},
-//};
-//};
+export const getStaticProps = async () => {
+  //do no trust the API
+  const ships: any = [];
+  let initialLink = await fetch("https://swapi.dev/api/starships/?page=1");
+  const parsedData = await initialLink.json();
+  let url = parsedData.next;
+  ships.push(...parsedData.results);
+  while (url !== null) {
+    let currentLink = await fetch(url);
+    const parsedData = await currentLink.json();
+    url = parsedData.next;
+    ships.push(...parsedData.results);
+  }
+  return {
+    props: {
+      ships,
+    },
+  };
+};
