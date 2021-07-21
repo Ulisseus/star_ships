@@ -27,9 +27,9 @@ const Footer: React.FC = () => {
 };
 
 const App: React.FC<{ ships: any[] }> = ({ ships }) => {
-  //TO-DO add proper type check for every field
+  //TO-DO add proper type guard for every field
   if (ships[0]["name"]) ships as Ship[];
-  const [state, setState] = useState<"selection" | "comparision">("selection");
+  const [mode, setMode] = useState<"selection" | "comparison">("selection");
   const [shipsToCompare, setShipsToCompare] = useState<Ship[]>([]);
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -37,15 +37,15 @@ const App: React.FC<{ ships: any[] }> = ({ ships }) => {
       <main
         className={`${styles.main} d-flex flex-column justify-content-center bg-gray`}
       >
-        {state === "selection" ? (
+        {mode === "selection" ? (
           <ShipList
             ships={ships}
-            setState={setState}
+            setMode={setMode}
             setShipToCompare={setShipsToCompare}
             shipsToCompare={shipsToCompare}
           />
         ) : (
-          <Comparision setState={setState} ships={shipsToCompare} />
+          <Comparision setState={setMode} ships={shipsToCompare} />
         )}
       </main>
       <Footer />

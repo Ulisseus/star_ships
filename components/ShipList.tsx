@@ -4,10 +4,10 @@ import styles from "../styles/shipList.module.scss";
 
 const ShipList: React.FC<{
   ships: Ship[];
-  setState: React.Dispatch<React.SetStateAction<"selection" | "comparision">>;
+  setMode: React.Dispatch<React.SetStateAction<"selection" | "comparison">>;
   setShipToCompare: React.Dispatch<React.SetStateAction<Ship[]>>;
   shipsToCompare: Ship[];
-}> = ({ ships, setState, setShipToCompare, shipsToCompare }) => {
+}> = ({ ships, setMode, setShipToCompare, shipsToCompare }) => {
   const [message, setMessage] = useState("");
   const onClick = (ship: Ship) => {
     if (shipsToCompare.map((s) => s.name).includes(ship.name)) {
@@ -37,7 +37,7 @@ const ShipList: React.FC<{
       onClick={() => {
         if (shipsToCompare.length > 1) {
           setMessage("");
-          setState("comparision");
+          setMode("comparison");
         } else setMessage("Select at least two starships to compare");
       }}
     >

@@ -20,7 +20,7 @@ const validate = (value: any) => {
 };
 
 const Comparision: React.FC<{
-  setState: React.Dispatch<React.SetStateAction<"selection" | "comparision">>;
+  setState: React.Dispatch<React.SetStateAction<"selection" | "comparison">>;
   ships: Ship[];
 }> = ({ setState, ships }) => {
   const [compareBy, setCompareBy] = useState<compareBy>("cost_in_credits");
