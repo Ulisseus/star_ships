@@ -11,7 +11,8 @@ const Nav: React.FC = () => {
         Star wars ships
       </h1>
       <div className="text-primary">
-        In some far-far away galaxy someone decided to compare all starships...
+        A long time ago in a galaxy far, far away someone decided to compare all
+        starships...
       </div>
     </nav>
   );
