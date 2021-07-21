@@ -24,10 +24,19 @@ const Comparision: React.FC<{
   ships: Ship[];
 }> = ({ setState, ships }) => {
   const [compareBy, setCompareBy] = useState<compareBy>("cost_in_credits");
-  ships.sort((a, b) => validate(b[compareBy]) - validate(a[compareBy]));
+  const [byIncreasing, setByIncreasing] = useState(true);
+  ships.sort((a, b) => {
+    if (byIncreasing) return validate(b[compareBy]) - validate(a[compareBy]);
+    else return validate(a[compareBy]) - validate(b[compareBy]);
+  });
   return (
     <>
-      <CompareBy setCompareBy={setCompareBy} compareBy={compareBy} />
+      <CompareBy
+        setCompareBy={setCompareBy}
+        compareBy={compareBy}
+        byIncreasing={byIncreasing}
+        setByIncreasing={setByIncreasing}
+      />
       <div className={`d-flex flex-nowrap ${styles.comparison}`}>
         {ships.map((ship) => (
           <ShipProfile ship={ship} value={compareBy} key={ship.name} />

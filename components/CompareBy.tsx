@@ -14,15 +14,20 @@ export const compareByArr = [
 const CompareBy: React.FC<{
   setCompareBy: React.Dispatch<React.SetStateAction<compareBy>>;
   compareBy: compareBy;
-}> = ({ setCompareBy, compareBy }) => {
+  byIncreasing: boolean;
+  setByIncreasing: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ setCompareBy, compareBy, byIncreasing, setByIncreasing }) => {
   return (
     <div>
-      <h2>Compare by:</h2>
+      <h2 className="mx-3 ">Compare by:</h2>
       <div className="d-flex flex-wrap">
         {compareByArr.map((value) => {
           return (
             <button
-              onClick={() => setCompareBy(value as compareBy)}
+              onClick={() => {
+                setCompareBy(value as compareBy);
+                if (value === compareBy) setByIncreasing(!byIncreasing);
+              }}
               key={value}
               type="button"
               className={`btn mx-3 my-2 ${
