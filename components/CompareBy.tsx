@@ -32,7 +32,7 @@ const CompareBy: React.FC<{
               }}
               key={value}
               type="button"
-              className={`btn mx-3 my-2  ${
+              className={`btn mx-3 my-2 ${styles.button}  ${
                 value === compareBy
                   ? `btn-primary ${
                       byIncreasing ? styles.increasing : styles.decreasing

@@ -44,12 +44,12 @@ const Comparision: React.FC<{
       </div>
       <button
         type="button"
-        className="btn btn-secondary mx-3 my-2 text-primary border border-primary"
+        className={`btn btn-secondary mx-3 my-2 text-primary border border-primary ${styles.button}`}
         onClick={() => {
           setState("selection");
         }}
       >
-        Back to selection
+        <b>Back to selection</b>
       </button>
     </>
   );
