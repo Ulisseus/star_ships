@@ -52,6 +52,7 @@ const CompareBy: React.FC<{
                 setCompareBy(value as compareBy);
                 if (value === compareBy) setByIncreasing(!byIncreasing);
               }}
+              key={value}
             >
               <CompareButton
                 value={value}
