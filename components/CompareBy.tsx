@@ -13,6 +13,28 @@ export const compareByArr = [
   "MGLT",
 ];
 
+const CompareButton: React.FC<{
+  value: string;
+  compareBy: compareBy;
+  sortByIncreasing: boolean;
+}> = ({ value, compareBy, sortByIncreasing }) => {
+  return (
+    <button
+      key={value}
+      type="button"
+      className={`btn mx-3 my-2 ${styles.button}  ${
+        value === compareBy
+          ? `btn-primary ${
+              sortByIncreasing ? styles.increasing : styles.decreasing
+            }`
+          : "btn-secondary text-primary"
+      }`}
+    >
+      {value}
+    </button>
+  );
+};
+
 const CompareBy: React.FC<{
   setCompareBy: React.Dispatch<React.SetStateAction<compareBy>>;
   compareBy: compareBy;
@@ -25,23 +47,18 @@ const CompareBy: React.FC<{
       <div className="d-flex flex-wrap">
         {compareByArr.map((value) => {
           return (
-            <button
+            <div
               onClick={() => {
                 setCompareBy(value as compareBy);
                 if (value === compareBy) setByIncreasing(!byIncreasing);
               }}
-              key={value}
-              type="button"
-              className={`btn mx-3 my-2 ${styles.button}  ${
-                value === compareBy
-                  ? `btn-primary ${
-                      byIncreasing ? styles.increasing : styles.decreasing
-                    }`
-                  : "btn-secondary text-primary"
-              }`}
             >
-              {value}
-            </button>
+              <CompareButton
+                value={value}
+                compareBy={compareBy}
+                sortByIncreasing={byIncreasing}
+              />
+            </div>
           );
         })}
       </div>
