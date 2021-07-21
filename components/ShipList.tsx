@@ -18,8 +18,8 @@ const ShipList: React.FC<{
       }}
       className={
         shipsToCompare.includes(ship)
-          ? `card bg-secondary text-primary ${styles.ship} m-3 px-2 py-1`
-          : `card ${styles.ship} m-3 px-2 py-1`
+          ? `card bg-secondary text-primary ${styles.ship} my-1  px-2 py-1`
+          : `card ${styles.ship} my-1 px-2 py-1`
       }
     >
       {ship.name}
@@ -38,9 +38,7 @@ const ShipList: React.FC<{
           Compare selected
         </button>
       </div>
-      <ul className={`d-flex flex-column flex-lg-wrap ${styles.list} mx-2`}>
-        {names}
-      </ul>
+      <ul className={`${styles.list} mx-2`}>{names}</ul>
     </>
   );
 };
