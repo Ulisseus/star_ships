@@ -27,6 +27,7 @@ const ShipList: React.FC<{
   ));
   return (
     <>
+      <ul className={`${styles.list} mx-2`}>{names}</ul>
       <div className="d-flex justify-content-center">
         <button
           type="button"
@@ -35,10 +36,9 @@ const ShipList: React.FC<{
             setState("comparision");
           }}
         >
-          Compare selected
+          <b className={styles.button}>Compare selected</b>
         </button>
       </div>
-      <ul className={`${styles.list} mx-2`}>{names}</ul>
     </>
   );
 };
