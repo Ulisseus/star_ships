@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="title" content="Star Wars Ships" />
+        <link rel="shortcut icon" href="/favicon.png" />
         <title key="title">Star Wars Ships</title>
       </Head>
       <Component {...pageProps} />
