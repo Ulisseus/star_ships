@@ -11,7 +11,7 @@
           |[]|         |[]|
           l__j         l__j
           |!!|         |!!|
-          |..|         |..|      A simple spaceship comparison tool
+          |..|         |..|      pew-pew! 
           ([])         ([])
           ]--[         ]--[
           [_L]         [_L]  
@@ -19,3 +19,5 @@
         `=}--{='     `=}--{='
        .-^--r-^-.   .-^--r-^-.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+One day project to check incremental static regeneration in next.js. 
