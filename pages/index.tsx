@@ -58,7 +58,6 @@ export default App;
 const TWENTY_FOUR_HOURS = 60 * 60 * 24;
 
 export const getStaticProps = async () => {
-  //do no trust API
   const ships: any = [];
   let initialLink = await fetch("https://swapi.dev/api/starships/?page=1");
   const parsedData = await initialLink.json();
